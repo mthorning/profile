@@ -1,12 +1,20 @@
+let css = ReactDOMRe.Style.make;
+let str = React.string;
+
 module App = {
-  let str = React.string;
   [@react.component]
   let make = _ => {
-    <div className="container">
-      <div className="row">
-        <div className="one-half column"> <h1> "hello"->str </h1> </div>
-      </div>
-    </div>;
+    let url = ReasonReactRouter.useUrl();
+    Js.log(url);
+    <>
+      <Nav />
+      {switch (url.hash) {
+       | ""
+       | "/" => <Home />
+       | "/about" => <About />
+       | _ => <NotFound />
+       }}
+    </>;
   };
 };
 
