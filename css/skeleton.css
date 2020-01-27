@@ -34,7 +34,7 @@
 
   --secondary-bg: #184444eb;
   --secondary-color: #c3c0bda6;
-  --secondary-highlight-color: #14a3d4;
+  --secondary-highlight-color: #0dc7c3;
 }
 
 .primary-bg {
@@ -285,16 +285,24 @@ h6 {
   h6 {
     font-size: 1.5rem;
   }
+  p {
+    font-size: 1.8rem;
+  }
 }
 
 p {
   margin-top: 0;
+  text-align: justify;
 }
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
+  text-decoration: none;
   color: var(--primary-color);
+}
+a.hv:hover {
+  color: var(--primary-highlight-color);
 }
 
 /* Buttons
@@ -547,13 +555,10 @@ hr {
   text-decoration: none;
   font-size: 2rem;
   border-bottom: 3px solid var(--primary-bg);
-  border-radius: 4px;
-  margin-right: 10px;
-  padding: 4px 8px;
   text-decoration: none;
   font-size: 2rem;
 }
-.navbar-item:hover {
+.navbar-item-hv:hover {
   border-bottom: 3px solid var(--primary-highlight-color);
 }
 

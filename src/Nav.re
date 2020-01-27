@@ -1,5 +1,4 @@
-let css = ReactDOMRe.Style.make;
-let str = React.string;
+open Utils;
 
 module HomeIcon = {
   [@bs.module "react-icons/io"] [@react.component]
@@ -8,54 +7,65 @@ module HomeIcon = {
     "IoMdHome";
 };
 
-type menuItem = {
-  title: string,
-  href: string,
+module NavItem = {
+  [@react.component]
+  let make = (~page, ~setShowContact) =>
+    <li
+      style={css(
+        ~float="left",
+        ~listStyleType="none",
+        ~marginRight="15px",
+        (),
+      )}>
+      {switch (page) {
+       | "" =>
+         <a className="navbar-item" href="#/">
+           <HomeIcon
+             className="primary-hover"
+             style={css(~fontSize="3rem", ())}
+           />
+         </a>
+       | "contact" =>
+         <Contact.MenuItem
+           className="navbar-item navbar-item-hv"
+           href={"#/" ++ page}
+           setShowContact
+           page
+         />
+       | _ =>
+         <a className="navbar-item navbar-item-hv" href={"#/" ++ page}>
+           page->str
+         </a>
+       }}
+    </li>;
 };
 
-let menuItems = [
-  {title: "about", href: "#/about"},
-  {title: "meta", href: "#/meta"},
-  {title: "contact", href: "#/contact"},
-];
+let pages = ["", "about", "resume", "contact"];
+
 [@react.component]
 let make = _ => {
+  let (showContact, setShowContact) = React.useState(_ => false);
   let url = ReasonReactRouter.useUrl();
-  <nav
-    className="primary-bg"
-    style={css(
-      ~position="fixed",
-      ~display="flex",
-      ~justifyContent="space-between",
-      ~right="0",
-      ~left="0",
-      ~height="60px",
-      ~zIndex="1",
-      ~padding="10px",
-      (),
-    )}>
-    {switch (url.hash) {
-     | ""
-     | "/" => <span />
-     | _ =>
-       <a href="/#/">
-         <HomeIcon
-           className="primary-hover"
-           style={css(~fontSize="3rem", ~padding="5px", ())}
-         />
-       </a>
-     }}
-    <ul style={css(~display="flex-inline", ~padding="10px", ())}>
-      {menuItems
-       ->Belt.List.map(item =>
-           <li
-             key={item.title}
-             style={css(~float="left", ~listStyleType="none", ())}>
-             <a className="navbar-item" href={item.href}> item.title->str </a>
-           </li>
-         )
-       ->Array.of_list
-       ->React.array}
-    </ul>
-  </nav>;
+  <>
+    <Contact showContact setShowContact />
+    <nav
+      className="primary-bg"
+      style={css(
+        ~position="fixed",
+        ~display="flex",
+        ~justifyContent="flex-end",
+        ~right="0",
+        ~left="0",
+        ~height="60px",
+        ~zIndex="1",
+        ~padding="10px",
+        (),
+      )}>
+      <ul style={css(~display="flex-inline", ~padding="10px", ())}>
+        {pages
+         ->Belt.List.keep(page => "/" ++ page !== url.hash)
+         ->mapElements(page => <NavItem key=page page setShowContact />)}
+      </ul>
+    </nav>
+  </>;
 };
