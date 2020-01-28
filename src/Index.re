@@ -8,7 +8,7 @@ module App = {
       style={css(
         ~minHeight="100vh",
         ~position="relative",
-        ~paddingBottom="100px",
+        ~paddingBottom="10rem",
         (),
       )}>
       <Nav />

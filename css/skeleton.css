@@ -37,21 +37,34 @@
   --secondary-highlight-color: #0dc7c3;
 }
 
-.primary-bg {
+.bg-p {
   background-color: var(--primary-bg);
 }
-.primary-highlight {
-  border-color: var(--primary-highlight-color);
+.col-p {
+  color: var(--primary-color);
+}
+.button.col-p-hv:hover,
+.col-p-hv:hover {
   color: var(--primary-highlight-color);
 }
-.secondary-bg {
+.button.border-p-hv:hover,
+.border-p-hv:hover {
+  border-color: var(--primary-highlight-color);
+}
+
+.bg-s {
   background-color: var(--secondary-bg);
 }
-.secondary-color {
+.col-s {
   color: var(--secondary-color);
 }
-.primary-hover:hover {
-  color: var(--primary-highlight-color);
+.button.col-s-hv:hover,
+.col-s-hv:hover {
+  color: var(--secondary-highlight-color);
+}
+.button.border-s-hv:hover,
+.border-s-hv:hover {
+  border-color: var(--secondary-highlight-color);
 }
 
 /* Grid
@@ -295,16 +308,28 @@ p {
   text-align: justify;
 }
 
+.font-2 {
+  font-size: 2rem;
+}
+.font-3 {
+  font-size: 3rem;
+}
+.font-4 {
+  font-size: 4rem;
+}
+.font-5 {
+  font-size: 5rem;
+}
+.td-none {
+  text-decoration: none;
+}
+
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   text-decoration: none;
   color: var(--primary-color);
 }
-a.hv:hover {
-  color: var(--primary-highlight-color);
-}
-
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
@@ -342,10 +367,6 @@ input[type="button"]:focus {
   color: var(--primary-highlight-color);
   border-color: var(--primary-highlight-color);
   outline: 0;
-}
-.button.secondary-button:hover {
-  color: var(--secondary-highlight-color);
-  border-color: var(--secondary-highlight-color);
 }
 .button.button-primary,
 button.button-primary,
@@ -463,7 +484,11 @@ ol ul {
 li {
   margin-bottom: 1rem;
 }
-
+.li-hz {
+  float: left;
+  list-style-type: none;
+  margin-right: 15px;
+}
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
@@ -522,20 +547,44 @@ form {
   margin-bottom: 2.5rem;
 }
 
+.m-1 {
+  margin: 1rem;
+}
+.m-2 {
+  margin: 2rem;
+}
+.m-3 {
+  margin: 3rem;
+}
+.m-4 {
+  margin: 4rem;
+}
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+.p-4 {
+  padding: 4rem;
+}
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.u-full-width {
+.full-width {
   width: 100%;
   box-sizing: border-box;
 }
-.u-max-full-width {
+.max-full-width {
   max-width: 100%;
   box-sizing: border-box;
 }
-.u-pull-right {
+.pull-right {
   float: right;
 }
-.u-pull-left {
+.pull-left {
   float: left;
 }
 .v-center {
@@ -557,9 +606,6 @@ hr {
   border-bottom: 3px solid var(--primary-bg);
   text-decoration: none;
   font-size: 2rem;
-}
-.navbar-item-hv:hover {
-  border-bottom: 3px solid var(--primary-highlight-color);
 }
 
 /* Clearing

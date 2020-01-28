@@ -1,39 +1,23 @@
 open Utils;
 
-module HomeIcon = {
-  [@bs.module "react-icons/io"] [@react.component]
-  external make:
-    (~className: string, ~style: ReactDOMRe.style) => React.element =
-    "IoMdHome";
-};
-
 module NavItem = {
   [@react.component]
   let make = (~page, ~setShowContact) =>
-    <li
-      style={css(
-        ~float="left",
-        ~listStyleType="none",
-        ~marginRight="15px",
-        (),
-      )}>
+    <li className="li-hz">
       {switch (page) {
        | "" =>
-         <a className="navbar-item" href="#/">
-           <HomeIcon
-             className="primary-hover"
-             style={css(~fontSize="3rem", ())}
-           />
+         <a className="col-p-hv navbar-item" href="#/">
+           <Icons.Home className="font-3" />
          </a>
        | "contact" =>
          <Contact.MenuItem
-           className="navbar-item navbar-item-hv"
+           className="navbar-item border-p-hv"
            href={"#/" ++ page}
            setShowContact
            page
          />
        | _ =>
-         <a className="navbar-item navbar-item-hv" href={"#/" ++ page}>
+         <a className="navbar-item border-p-hv" href={"#/" ++ page}>
            page->str
          </a>
        }}
@@ -49,19 +33,19 @@ let make = _ => {
   <>
     <Contact showContact setShowContact />
     <nav
-      className="primary-bg"
+      className="bg-p"
       style={css(
         ~position="fixed",
         ~display="flex",
         ~justifyContent="flex-end",
         ~right="0",
         ~left="0",
-        ~height="60px",
+        ~height="6rem",
         ~zIndex="1",
-        ~padding="10px",
+        ~padding="1rem",
         (),
       )}>
-      <ul style={css(~display="flex-inline", ~padding="10px", ())}>
+      <ul style={css(~display="flex-inline", ~padding="1rem", ())}>
         {pages
          ->Belt.List.keep(page => "/" ++ page !== url.hash)
          ->mapElements(page => <NavItem key=page page setShowContact />)}

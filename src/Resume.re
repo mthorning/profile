@@ -41,9 +41,9 @@ let tableBody = list => {
 module Table = {
   [@react.component]
   let make = (~headings, ~data, ~title) => {
-    <div style={css(~marginTop="60px", ())}>
+    <div style={css(~marginTop="6rem", ())}>
       <h2> title->str </h2>
-      <table className="u-full-width">
+      <table className="full-width">
         <thead>
           <tr>
             {headings->mapElements(heading =>
