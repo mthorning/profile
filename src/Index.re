@@ -12,11 +12,10 @@ module App = {
         (),
       )}>
       <Nav />
-      {switch (url.hash) {
-       | ""
-       | "/" => <Home />
-       | "/about" => <About />
-       | "/resume" => <Resume />
+      {switch (url.path) {
+       | [] => <Home />
+       | ["about"] => <About />
+       | ["resume"] => <Resume />
        | _ => <NotFound />
        }}
       <Meta />

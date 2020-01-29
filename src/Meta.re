@@ -7,7 +7,6 @@ type meta = {
 let metaItems = [
   {href: "https://reasonml.github.io/en/", title: "ReasonML"},
   {href: "https://reasonml.github.io/reason-react/", title: "ReasonReact"},
-  {href: "http://getskeleton.com/", title: "Skeleton CSS"},
 ];
 
 [@react.component]
