@@ -43,6 +43,9 @@
 .col-p {
   color: var(--primary-color);
 }
+.col-p-highlight {
+  color: var(--primary-highlight-color);
+}
 .button.col-p-hv:hover,
 .col-p-hv:hover {
   color: var(--primary-highlight-color);
@@ -57,6 +60,9 @@
 }
 .col-s {
   color: var(--secondary-color);
+}
+.col-s-highlight {
+  color: var(--secondary-highlight-color);
 }
 .button.col-s-hv:hover,
 .col-s-hv:hover {

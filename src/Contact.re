@@ -1,17 +1,5 @@
 open Utils;
 
-module MenuItem = {
-  [@react.component]
-  let make = (~page, ~href, ~className, ~setShowContact) => {
-    let onClick = event => {
-      ReactEvent.Mouse.preventDefault(event);
-      setShowContact(previous => !previous);
-    };
-
-    <a onClick className href> page->str </a>;
-  };
-};
-
 module Details = {
   [@react.component]
   let make = _ => {
@@ -43,11 +31,16 @@ module Details = {
 };
 
 [@react.component]
-let make = (~showContact, ~setShowContact) => {
+let make = _ => {
+  let url = ReasonReactRouter.useUrl();
+  let closeContact = _ => {
+    Js.log(url);
+    ReasonReactRouter.replace("/#" ++ url.hash);
+  };
   <>
-    {showContact
+    {url.search === "contact/"
        ? <div
-           onClick={_ => setShowContact(_ => false)}
+           onClick=closeContact
            className="v-center"
            style={css(
              ~position="fixed",

@@ -2,36 +2,36 @@ open Utils;
 
 module NavItem = {
   [@react.component]
-  let make = (~page, ~setShowContact) =>
+  let make = (~page) => {
+    let url = ReasonReactRouter.useUrl();
     <li className="li-hz">
       {switch (page) {
        | "" =>
-         <a className="col-p-hv navbar-item" href="/">
+         <a className="col-p-hv navbar-item" href="#">
            <Icons.Home className="font-3" />
          </a>
        | "contact" =>
-         <Contact.MenuItem
+         <a
            className="navbar-item border-p-hv"
-           href={"/" ++ page}
-           setShowContact
-           page
-         />
+           href={"?" ++ page ++ "/#" ++ url.hash}>
+           page->str
+         </a>
        | _ =>
-         <a className="navbar-item border-p-hv" href={"/" ++ page}>
+         <a className="navbar-item border-p-hv" href={"#" ++ page}>
            page->str
          </a>
        }}
     </li>;
+  };
 };
 
 let pages = ["", "about", "resume", "contact"];
 
 [@react.component]
 let make = _ => {
-  let (showContact, setShowContact) = React.useState(_ => false);
   let url = ReasonReactRouter.useUrl();
   <>
-    <Contact showContact setShowContact />
+    <Contact />
     <nav
       className="bg-p"
       style={css(
@@ -47,8 +47,8 @@ let make = _ => {
       )}>
       <ul style={css(~display="flex-inline", ~padding="1rem", ())}>
         {pages
-         ->Belt.List.keep(page => "/" ++ page !== url.hash)
-         ->mapElements(page => <NavItem key=page page setShowContact />)}
+         ->Belt.List.keep(page => page !== url.hash)
+         ->mapElements(page => <NavItem key=page page />)}
       </ul>
     </nav>
   </>;

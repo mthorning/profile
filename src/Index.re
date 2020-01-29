@@ -4,6 +4,7 @@ module App = {
   [@react.component]
   let make = _ => {
     let url = ReasonReactRouter.useUrl();
+    Js.log(url);
     <div
       style={css(
         ~minHeight="100vh",
@@ -12,10 +13,10 @@ module App = {
         (),
       )}>
       <Nav />
-      {switch (url.path) {
-       | [] => <Home />
-       | ["about"] => <About />
-       | ["resume"] => <Resume />
+      {switch (url.hash) {
+       | "" => <Home />
+       | "about" => <About />
+       | "resume" => <Resume />
        | _ => <NotFound />
        }}
       <Meta />
