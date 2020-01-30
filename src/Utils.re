@@ -5,5 +5,5 @@ let mapElements = (list, callback): React.element =>
 
 let getCurrentPage = _ => {
   let url = ReasonReactRouter.useUrl();
-  List.length(url.path) > 1 ? List.hd(url.path) : "";
-}
+  List.length(url.path) > 0 ? List.hd(url.path) : "";
+};

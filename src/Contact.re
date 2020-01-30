@@ -32,27 +32,32 @@ module Details = {
 
 [@react.component]
 let make = _ => {
+  let currentPage =
+    switch (getCurrentPage()) {
+    | "contact" => ""
+    | page => page
+    };
   let closeContact = _ => {
-    ReasonReactRouter.replace(getCurrentPage());
+    ReasonReactRouter.replace("/" ++ currentPage);
   };
-       <div
-           onClick=closeContact
-           className="v-center"
-           style={css(
-             ~position="fixed",
-             ~top="0",
-             ~bottom="0",
-             ~width="100%",
-             ~boxSizing="border-box",
-             ~background="rgba(0, 0, 0, 0.8",
-             ~zIndex="2",
-             (),
-           )}>
-           <div
-             onClick={event => ReactEvent.Mouse.stopPropagation(event)}
-             className="v-center bg-s container"
-             style={css(~minHeight="50vh", ~borderRadius="25px", ())}>
-             <Details />
-           </div>
-         </div>
+  <div
+    onClick=closeContact
+    className="v-center"
+    style={css(
+      ~position="fixed",
+      ~top="0",
+      ~bottom="0",
+      ~width="100%",
+      ~boxSizing="border-box",
+      ~background="rgba(0, 0, 0, 0.8",
+      ~zIndex="2",
+      (),
+    )}>
+    <div
+      onClick={event => ReactEvent.Mouse.stopPropagation(event)}
+      className="v-center bg-s container"
+      style={css(~minHeight="50vh", ~borderRadius="25px", ())}>
+      <Details />
+    </div>
+  </div>;
 };

@@ -12,7 +12,8 @@ module.exports = {
   mode: "production",
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "index.js"
+    filename: "index.js",
+    chunkFilename: "[name].bundle[hash].js"
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "indexProduction.html" }),
@@ -33,5 +34,10 @@ module.exports = {
         ]
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
   }
 };

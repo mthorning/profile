@@ -7,7 +7,7 @@ module NavItem = {
     <li className="li-hz">
       {switch (page) {
        | "" =>
-         <a className="col-p-hv navbar-item" href="#">
+         <a className="col-p-hv navbar-item" href="/">
            <Icons.Home className="font-3" />
          </a>
        | "contact" =>
@@ -16,10 +16,7 @@ module NavItem = {
            href={currentPage ++ "/contact"}>
            page->str
          </a>
-       | _ =>
-         <a className="navbar-item border-p-hv" href={page}>
-           page->str
-         </a>
+       | _ => <a className="navbar-item border-p-hv" href=page> page->str </a>
        }}
     </li>;
   };

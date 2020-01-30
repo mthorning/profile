@@ -7,7 +7,7 @@
     "clean": "bsb -clean-world",
     "serve": "moduleserve ./ --port 8000 --spa",
     "prod": "node_modules/.bin/webpack",
-    "serve:prod": "moduleserve ./dist --port 8000 --spa"
+    "serve:prod": "moduleserve ./dist --port 9000 --spa"
   },
   "keywords": [
     "BuckleScript",
