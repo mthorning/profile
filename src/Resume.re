@@ -43,16 +43,18 @@ module Table = {
   let make = (~headings, ~data, ~title) => {
     <div style={css(~marginTop="6rem", ())}>
       <h2> title->str </h2>
-      <table className="full-width">
-        <thead>
-          <tr>
-            {headings->mapElements(heading =>
-               <th key=heading> heading->str </th>
-             )}
-          </tr>
-        </thead>
-        {tableBody(data)}
-      </table>
+      <div style={css(~overflowX="auto", ())}>
+        <table className="full-width">
+          <thead>
+            <tr>
+              {headings->mapElements(heading =>
+                 <th key=heading> heading->str </th>
+               )}
+            </tr>
+          </thead>
+          {tableBody(data)}
+        </table>
+      </div>
     </div>;
   };
 };
@@ -86,5 +88,5 @@ let make = () => {
       headings=["Employer", "Role", "From", "Until"]
       data=educationHistory
     />
-  </Page>
+  </Page>;
 };

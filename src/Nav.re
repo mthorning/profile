@@ -3,7 +3,6 @@ open Utils;
 module NavItem = {
   [@react.component]
   let make = (~page) => {
-    let currentPage = getCurrentPage();
     <li className="li-hz">
       {switch (page) {
        | "" =>
