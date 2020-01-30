@@ -3,7 +3,7 @@ open Utils;
 module NavItem = {
   [@react.component]
   let make = (~page) => {
-    let url = ReasonReactRouter.useUrl();
+    let currentPage = getCurrentPage();
     <li className="li-hz">
       {switch (page) {
        | "" =>
@@ -13,11 +13,11 @@ module NavItem = {
        | "contact" =>
          <a
            className="navbar-item border-p-hv"
-           href={"?" ++ page ++ "/#" ++ url.hash}>
+           href={currentPage ++ "/contact"}>
            page->str
          </a>
        | _ =>
-         <a className="navbar-item border-p-hv" href={"#" ++ page}>
+         <a className="navbar-item border-p-hv" href={page}>
            page->str
          </a>
        }}
@@ -29,9 +29,8 @@ let pages = ["", "about", "resume", "contact"];
 
 [@react.component]
 let make = _ => {
-  let url = ReasonReactRouter.useUrl();
+  let currentPage = getCurrentPage();
   <>
-    <Contact />
     <nav
       className="bg-p"
       style={css(
@@ -47,7 +46,7 @@ let make = _ => {
       )}>
       <ul style={css(~display="flex-inline", ~padding="1rem", ())}>
         {pages
-         ->Belt.List.keep(page => page !== url.hash)
+         ->Belt.List.keep(page => page !== currentPage)
          ->mapElements(page => <NavItem key=page page />)}
       </ul>
     </nav>

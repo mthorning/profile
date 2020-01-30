@@ -32,14 +32,10 @@ module Details = {
 
 [@react.component]
 let make = _ => {
-  let url = ReasonReactRouter.useUrl();
   let closeContact = _ => {
-    Js.log(url);
-    ReasonReactRouter.replace("/#" ++ url.hash);
+    ReasonReactRouter.replace(getCurrentPage());
   };
-  <>
-    {url.search === "contact/"
-       ? <div
+       <div
            onClick=closeContact
            className="v-center"
            style={css(
@@ -59,6 +55,4 @@ let make = _ => {
              <Details />
            </div>
          </div>
-       : React.null}
-  </>;
 };

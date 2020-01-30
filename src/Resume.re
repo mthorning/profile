@@ -58,7 +58,7 @@ module Table = {
 };
 
 [@react.component]
-let make = _ => {
+let make = () => {
   <Page title="Resume">
     <p>
       "I have been a JavaScript developer at Headforwards since October 2017. The client that my team works for is a large multinational telecommunications company, we build software which enables their customers to visualise and monitor their datacenter assets from customisable dashboard views. Previous to this I was employed as a Work Area Manager at Royal Mail where I line-managed a team of 30 people in addition to being responsible for maintaining the Quality of Service of the Mail Centre through a system of Continuous Improvement which has its roots in Lean Manufacturing."
@@ -86,5 +86,5 @@ let make = _ => {
       headings=["Employer", "Role", "From", "Until"]
       data=educationHistory
     />
-  </Page>;
+  </Page>
 };

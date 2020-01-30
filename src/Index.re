@@ -4,7 +4,11 @@ module App = {
   [@react.component]
   let make = _ => {
     let url = ReasonReactRouter.useUrl();
-    Js.log(url);
+    if(List.length(url.path) > 1) {
+      Js.log(url.path);
+      Js.log(url.path->List.nth(1));
+    };
+    <>
     <div
       style={css(
         ~minHeight="100vh",
@@ -13,14 +17,20 @@ module App = {
         (),
       )}>
       <Nav />
-      {switch (url.hash) {
-       | "" => <Home />
-       | "about" => <About />
-       | "resume" => <Resume />
+      {switch (url.path) {
+       | [""] => <Home />
+       | ["about"] => <About />
+       | ["resume"] => <Resume />
        | _ => <NotFound />
        }}
       <Meta />
-    </div>;
+    </div>
+    {
+      List.length(url.path) > 1 && url.path->List.nth(1) === "contact"
+        ? <Contact />
+        : React.null;
+    }
+    </>
   };
 };
 
