@@ -17,7 +17,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "indexProduction.html" }),
-    new CopyPlugin([{ from: "css", to: "assets" }]),
+    new CopyPlugin([
+      { from: "css", to: "assets" },
+      { from: "netlify", to: "." }
+    ]),
     new CleanWebpackPlugin()
   ],
   module: {
