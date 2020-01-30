@@ -21,8 +21,7 @@ module App = {
          }}
         <Meta />
       </div>
-      {url.path |> List.exists(path => path === "contact")
-         ? <Contact /> : React.null}
+      {url.hash === "contact" ? <Contact /> : React.null}
     </>;
   };
 };

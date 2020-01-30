@@ -11,11 +11,7 @@ module NavItem = {
            <Icons.Home className="font-3" />
          </a>
        | "contact" =>
-         <a
-           className="navbar-item border-p-hv"
-           href={currentPage ++ "/contact"}>
-           page->str
-         </a>
+         <a className="navbar-item border-p-hv" href="#contact"> page->str </a>
        | _ => <a className="navbar-item border-p-hv" href=page> page->str </a>
        }}
     </li>;
