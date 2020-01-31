@@ -30,17 +30,16 @@ let educationHistory = [
   ["Penair School, Truro", "GCSE's x 9", "September 1995", "July 2000"],
 ];
 
-let tableBody = list => {
+let tableBody = list =>
   list->mapElements(row =>
     <tbody>
       <tr> {row->mapElements(cell => <td key=cell> cell->str </td>)} </tr>
     </tbody>
   );
-};
 
 module Table = {
   [@react.component]
-  let make = (~headings, ~data, ~title) => {
+  let make = (~headings, ~data, ~title) =>
     <div style={css(~marginTop="6rem", ())}>
       <h2> title->str </h2>
       <div style={css(~overflowX="auto", ())}>
@@ -56,37 +55,54 @@ module Table = {
         </table>
       </div>
     </div>;
-  };
 };
 
 [@react.component]
-let make = () => {
+let make = () =>
   <Page title="Resume">
-    <p>
-      "I have been a JavaScript developer at Headforwards since October 2017. The client that my team works for is a large multinational telecommunications company, we build software which enables their customers to visualise and monitor their datacenter assets from customisable dashboard views. Previous to this I was employed as a Work Area Manager at Royal Mail where I line-managed a team of 30 people in addition to being responsible for maintaining the Quality of Service of the Mail Centre through a system of Continuous Improvement which has its roots in Lean Manufacturing."
-      ->str
-    </p>
-    <p>
-      "I have worked with several JavaScript frameworks. In my role at Headforwards I primarily use React but we also maintain legacy code which uses Backbone. Privately I have used Svelte, Vue and my blog site is written using Gatsby. I have written backends for applications in Node as side projects, both using REST and GraphQl and have some experience of using MongoDb and Redis."
-      ->str
-    </p>
-    <p>
-      "In addition to JavaScript I also have some experience of writing basic CLI applications in Rust and I wrote this website in ReasonML with ReasonReact."
-      ->str
-    </p>
-    <p>
-      "I'm confident with Linux operating systems, and have experience of continuous Integration tools such as Jenkins and Drone. I've worked with Docker and NGINX and I'm able to set up new domains and create SSL Certificates so that sites are served over HTTPS."
-      ->str
-    </p>
-    <Table
-      title="Employment History"
-      headings=["Employer", "Role", "From", "Until"]
-      data=workHistory
-    />
-    <Table
-      title="Education"
-      headings=["Employer", "Role", "From", "Until"]
-      data=educationHistory
-    />
+    <>
+      <section>
+        <p>
+          "I have been a JavaScript developer at Headforwards since October 2017. The client that my team works for is a large multinational telecommunications company. We build software which enables their customers to visualise and monitor their data center assets from customisable dashboards."
+          ->str
+        </p>
+        <p>
+          "Previous to this I was employed as a Work Area Manager at Royal Mail where I line-managed a team of around thirty people in addition to being responsible for maintaining the Quality of Service of the Mail Centre through a system of Continuous Improvement which has its roots in Lean Manufacturing."
+          ->str
+        </p>
+      </section>
+      <section>
+        <Table
+          title="Employment History"
+          headings=["Employer", "Role", "From", "Until"]
+          data=workHistory
+        />
+      </section>
+      <section>
+        <h2> "Skills"->str </h2>
+        <p>
+          "I have worked with several JavaScript frameworks. In my role at Headforwards I primarily use React but we also maintain legacy code which uses Backbone. Privately I have used Svelte, Vue and my other site is written using Gatsby. I have written back-ends for applications in Node as side projects, both using REST and GraphQl and have some experience of using Postgres, MongoDB and Redis."
+          ->str
+        </p>
+        <p>
+          "In addition to JavaScript I also have some experience of writing basic CLI applications in Rust and I built this website with ReasonML and ReasonReact."
+          ->str
+        </p>
+        <p>
+          "I'm confident with Linux operating systems, and have experience of continuous Integration tools such as Jenkins and Drone. I've worked with Docker and NGINX and I'm able to set up new domains and create SSL Certificates so that sites are served over HTTPS."
+          ->str
+        </p>
+        <p>
+          "I am able to quickly learn skills as I need them and most importantly work collaboratively with others to deliver on projects."
+          ->str
+        </p>
+      </section>
+      <section>
+        <Table
+          title="Education"
+          headings=["Employer", "Role", "From", "Until"]
+          data=educationHistory
+        />
+      </section>
+    </>
   </Page>;
-};

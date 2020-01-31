@@ -16,15 +16,15 @@ module Button = {
 let make = _ => {
   let pTop = css(~paddingTop="2.5rem", ());
   <>
-    <Section className="bg-p">
+    <Banner className="bg-p">
       <div className="eight columns">
         <h1> "Matt Thorning"->str </h1>
         <h5 className="col-s">
           "I work with people to make great software."->str
         </h5>
       </div>
-    </Section>
-    <Section className="bg-s">
+    </Banner>
+    <Banner className="bg-s">
       <div className="eight columns">
         <h5>
           "I have been working professionally as a JavaScript developer since 2017 but my interests expand beyond just JavaScript. At the time of writing this my favourites are Rust, ReasonMl and SvelteJs. Take a look at my Github profile to see what I'm playing with at the moment."
@@ -38,8 +38,8 @@ let make = _ => {
           className="button col-s-hv border-s-hv pull-right"
         />
       </div>
-    </Section>
-    <Section className="bg-p">
+    </Banner>
+    <Banner className="bg-p">
       <div className="eight columns">
         <h5>
           "I also enjoy writing blog posts about subjects which I find interesting, please take a look at my other website, hellocode.dev."
@@ -53,6 +53,6 @@ let make = _ => {
           href="https://hellocode.dev"
         />
       </div>
-    </Section>
+    </Banner>
   </>;
 };

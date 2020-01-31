@@ -577,6 +577,10 @@ form {
 .p-4 {
   padding: 4rem;
 }
+
+section {
+  margin: 2rem 0 4rem;
+}
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .full-width {
