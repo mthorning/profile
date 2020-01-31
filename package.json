@@ -6,7 +6,7 @@
     "start": "bsb -make-world -w -ws _ ",
     "clean": "bsb -clean-world",
     "serve": "moduleserve ./ --port 8000 --spa",
-    "prod": "node_modules/.bin/webpack",
+    "prod": "yarn clean && yarn run build && node_modules/.bin/webpack",
     "serve:prod": "moduleserve ./dist --port 9000 --spa",
     "postversion": "git push && git push --tags"
   },
