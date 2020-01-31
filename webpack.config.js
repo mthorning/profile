@@ -4,7 +4,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./lib/js/src/Index.bs.js",
+  entry: "./lib/es6/src/Index.bs.js",
   // If you ever want to use webpack during development, change 'production'
   // to 'development' as per webpack documentation. Again, you don't have to
   // use webpack or any other bundler during development! Recheck README if

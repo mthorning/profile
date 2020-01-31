@@ -1,5 +1,4 @@
 open Utils;
-
 module App = {
   [@react.component]
   let make = _ => {
