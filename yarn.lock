@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@ahrefs/bs-recharts@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@ahrefs/bs-recharts/-/bs-recharts-0.3.3.tgz#3ec7da9796093d4656ca0f28f15d8b6be6b3ed5c"
+  integrity sha512-8lTE9XuBg8qwoNMJhWe54Xti48NXcoQi5gRnfd+Bv99k3pfNlxqTE4y+oMSJdE6aGaTd9tON24TeeqgUybhQOQ==
+
 "@types/anymatch@*":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
