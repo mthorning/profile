@@ -5,7 +5,7 @@ type meta = {
   href: string,
 };
 let metaItems = [
-  {href: "https://reasonml.github.io/en/", title: "ReasonML"},
+  {href: "https://reasonml.github.io/en/", title: "Reason"},
   {href: "https://reasonml.github.io/reason-react/", title: "ReasonReact"},
 ];
 

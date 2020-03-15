@@ -17,7 +17,7 @@ module NavItem = {
   };
 };
 
-let pages = ["", "resume", "contact"];
+let pages = ["", "about", "resume", "contact"];
 
 [@react.component]
 let make = _ => {

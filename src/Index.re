@@ -14,9 +14,7 @@ module App = {
         <Nav />
         {switch (url.path) {
          | [] => <Home />
-/*
          | ["about"] => <About />
-*/
          | ["resume"] => <Resume />
          | _ => <NotFound />
          }}

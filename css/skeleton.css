@@ -336,6 +336,10 @@ a {
   text-decoration: none;
   color: var(--primary-color);
 }
+
+a.link {
+    text-decoration: underline;
+}
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,

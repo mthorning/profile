@@ -86,7 +86,7 @@ let make = () =>
         company="Headforwards"
         role="UI Developer - Insight project"
         period="Jan 2020 - present">
-        "Working on the frontend of a system which helps customers visualize their datacenter services through web pages and customisable dashboards. We have a number of micro-frontends written in React and vanilla JavaScript with some existing legacy code still using Backbone with Marionette."
+        "Working on the frontend of a system which helps customers visualise their datacenter services through web pages and customisable dashboards. We have a number of micro-frontends written in React and vanilla JavaScript with some existing legacy code still using Backbone with Marionette."
       </Role>
       <Role
         company="Headforwards"
@@ -110,7 +110,7 @@ let make = () =>
         company="Royal Mail"
         role="Workplace Organisation Pillar Lead"
         period="Nov 2015 - Oct 2017">
-        "Targetting efficiency KPI's such as Items per Work Hour, I was responsible for increasing the efficiency of manual work areas by analysing and improving the ergonomics and processes within."
+        "Targeting efficiency KPI's such as Items per Work Hour, I was responsible for increasing the efficiency of manual work areas by analysing and improving the ergonomics and processes within."
       </Role>
     </section>
     <section>
@@ -125,7 +125,7 @@ let make = () =>
     </section>
     <section>
       <P>
-        "I have worked with several JavaScript frameworks. In my role at Headforwards I primarily use React but we also maintain legacy code which uses Backbone. Privately I have used Svelte, Vue and (although not strictly a framework) my other site is written using Gatsby. I have written back-ends for applications in Node as side projects, both using REST and GraphQl and have some experience of using Postgres, MongoDB (with or without ORM's) and Redis."
+        "I have worked with several JavaScript frameworks. In my role at Headforwards I primarily use React but we also maintain legacy code which uses Backbone. Privately I have used Svelte, Vue and (although not strictly a framework) my other site is written using Gatsby. I have written back-ends for applications in Node as side projects, both using REST and GraphQl and have some experience of using Postgres, MongoDB (with or without ORMs) and Redis."
       </P>
       <P>
         "In addition to JavaScript I also have some experience of writing basic CLI applications and web servers in Rust and I've built a few things with Reason and ReasonReact (including this website)."
