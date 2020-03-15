@@ -92,7 +92,7 @@ let make = () =>
         company="Headforwards"
         role="UI Developer - Nexcenter project"
         period="Oct 2017 - Jan 2020">
-        "Building an administration portal for customers and providers of datacenter services to enable them to effectively manage their visitors, deliveries and facilities. When I joined the team they were working on a customer portal Single Page Application written in Backbone. During my time there we rewrote the application in React, splitting it into micro-frontends and creating reusable components which we then used to build a second portal to be used by datacenter providers."
+        "Building an administration portal for customers and providers of datacenter services to enable them to effectively manage their visitors, deliveries and facilities. When I joined the team they were working on a single page application for their customer portal written in Backbone. We started to work on a portal for datacenter providers and decided to use React instead to speed up development. It went so well that we soon decided to port the customer portal over to React too by reusing components."
       </Role>
       <Role
         company="Royal Mail"
@@ -125,7 +125,7 @@ let make = () =>
     </section>
     <section>
       <P>
-        "I have worked with several JavaScript frameworks. In my role at Headforwards I primarily use React but we also maintain legacy code which uses Backbone. Privately I have used Svelte, Vue and (although not strictly a framework) my other site is written using Gatsby. I have written back-ends for applications in Node as side projects, both using REST and GraphQl and have some experience of using Postgres, MongoDB (with or without ORMs) and Redis."
+        "I have worked with several JavaScript frameworks. In my role at Headforwards I primarily use React but we also maintain legacy code which uses Backbone. Privately I have used Svelte, Vue and (although not strictly a framework) my other site is written using Gatsby. I have written backends for applications in Node as side projects, both using REST and GraphQl and have some experience of using Postgres, MongoDB (with or without ORMs) and Redis."
       </P>
       <P>
         "In addition to JavaScript I also have some experience of writing basic CLI applications and web servers in Rust and I've built a few things with Reason and ReasonReact (including this website)."
