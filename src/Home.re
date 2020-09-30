@@ -42,7 +42,7 @@ let make = _ => {
     <Banner className="bg-p">
       <div className="eight columns">
         <h5>
-          "I also enjoy writing blog posts about subjects which I find interesting, please take a look at my other website, hellocode.dev."
+          "I started writing blog posts about coding-related subjects which I find interesting, please take a look at my site hellocode.dev."
           ->str
         </h5>
       </div>
@@ -51,6 +51,21 @@ let make = _ => {
           className="button pull-right"
           text="hellocode"
           href="https://hellocode.dev"
+        />
+      </div>
+    </Banner>
+    <Banner className="bg-s">
+      <div className="eight columns">
+        <h5>
+          "My other passion is landscape photography, if that sounds like something that interests you then please check out mattthorningphotography.com."
+          ->str
+        </h5>
+      </div>
+      <div style=pTop className="two columns">
+        <Button
+          text="photography"
+          href="https://mattthorningphotography.com"
+          className="button col-s-hv border-s-hv pull-right"
         />
       </div>
     </Banner>

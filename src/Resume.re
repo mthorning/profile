@@ -125,7 +125,7 @@ let make = () =>
     </section>
     <section>
       <P>
-        "I have worked with several JavaScript frameworks. In my role at Headforwards I primarily use React but we also maintain legacy code which uses Backbone. Privately I have used Svelte, Vue and (although not strictly a framework) my other site is written using Gatsby. I have written backends for applications in Node as side projects, both using REST and GraphQl and have some experience of using Postgres, MongoDB (with or without ORMs) and Redis."
+        "I have worked with several JavaScript frameworks. In my role at Headforwards I primarily use React but we also maintain legacy code which uses Backbone. Privately I have used Vue and I have two other websites, one written with Sapper (Svelte), the other with Gatsby (React). I have written backends for applications in Node as side projects, both using REST and GraphQl and have some experience of using Postgres, MongoDB (with or without ORMs) and Redis."
       </P>
       <P>
         "In addition to JavaScript I also have some experience of writing basic CLI applications and web servers in Rust and I've built a few things with Reason and ReasonReact (including this website)."
