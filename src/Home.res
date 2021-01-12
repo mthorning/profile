@@ -38,11 +38,11 @@ let make = _ => {
     <Banner className="bg-p">
       <div className="eight columns">
         <h5>
-          {"I started writing blog posts about coding-related subjects which I find interesting, please take a look at my site hellocode.dev."->str}
+          {"I started writing blog posts about coding-related subjects which I find interesting, please take a look."->str}
         </h5>
       </div>
       <div style=pTop className="two columns">
-        <Button className="button pull-right" text="hellocode" href="https://hellocode.dev" />
+        <Button className="button pull-right" text="blog" href="https://blog.matt-thorning.dev" />
       </div>
     </Banner>
     <Banner className="bg-s">

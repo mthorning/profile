@@ -6,7 +6,7 @@
     "start": "bsb -make-world -w -ws _ ",
     "clean": "bsb -clean-world",
     "server": "moduleserve ./ --port 8000 --spa",
-    "prod": "yarn clean && yarn run build && node_modules/.bin/webpack",
+    "prod": "npm run clean && npm run build && node_modules/.bin/webpack",
     "server:prod": "moduleserve ./dist --port 9000 --spa",
     "postversion": "git push && git push --tags"
   },
@@ -40,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn clean && yarn run build && git add ."
+      "pre-commit": "npm run clean && npm run build && git add ."
     }
   }
 }

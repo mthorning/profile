@@ -12,7 +12,7 @@ let make = _ =>
       {"I have a passion for learning and spend most of my time "->str}
       <a className="link" href="https://github.com/mthorning"> {"coding "->str} </a>
       {"and "->str}
-      <a className="link" href="https://hellocode.dev"> {"writing blog posts "->str} </a>
+      <a className="link" href="https://blog.matt-thorning.dev"> {"writing blog posts "->str} </a>
       {"about coding. I also enjoy listening to music, occasionally play the guitar and like to spend time on the coast."->str}
     </p>
     <P>
